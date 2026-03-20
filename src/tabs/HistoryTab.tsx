@@ -1,5 +1,7 @@
-import { FlatList } from "react-native";
+import { FlatList, FlatListProps } from "react-native";
 import HistoryItem from "./components/HistoryItem";
+import { forwardRef } from "react";
+import Animated from "react-native-reanimated";
 
 const historyData = [
   {
@@ -154,16 +156,19 @@ const historyData = [
   },
 ];
 
-const HistoryTab = () => {
-    return (
-        <FlatList
-            data={historyData}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-                <HistoryItem item={item} />
-            )}
-        />
-    );
-};
+type Props = Omit<FlatListProps<typeof historyData[number]>, 'renderItem' | 'data' | 'CellRendererComponent'>;
+const HistoryTab = forwardRef<FlatList, Props>((props, ref) => {
+  return (
+    <Animated.FlatList
+      ref={ref}
+      data={historyData}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => (
+        <HistoryItem item={item} />
+      )}
+      {...props}
+    />
+  );
+});
 
 export default HistoryTab;

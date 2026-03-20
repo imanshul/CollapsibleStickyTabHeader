@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     name: { fontSize: 24, fontWeight: "700", marginTop: 8 },
-    mob: { marginTop: 4 },
+    mob: { margin: 4 },
     photo: {
         height: IMAGE_SIZE,
         width: IMAGE_SIZE,

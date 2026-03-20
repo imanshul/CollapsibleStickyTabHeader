@@ -1,5 +1,7 @@
-import { FlatList } from "react-native";
+import { forwardRef } from "react";
+import { FlatList, FlatListProps } from "react-native";
 import OverviewItem from "./components/OverviewItem";
+import Animated from "react-native-reanimated";
 
 const overviewData = [
     {
@@ -33,16 +35,21 @@ const overviewData = [
         change: '+200',
     },
 ];
-const OverviewTab = () => {
+
+type Props = Omit<FlatListProps<typeof overviewData[number]>, 'renderItem' | 'data' | 'CellRendererComponent'>;
+
+const OverviewTab = forwardRef<FlatList, Props>((props, ref) => {
     return (
-        <FlatList
+        <Animated.FlatList
+            ref={ref}
             data={overviewData}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
                 <OverviewItem item={item} />
             )}
+            {...props}
         />
     );
-};
+});
 
 export default OverviewTab;
