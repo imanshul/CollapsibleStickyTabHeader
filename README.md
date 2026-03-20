@@ -1,11 +1,20 @@
 # Collapsible Scroll Demo
 
-A **React Native** sample app that will demonstrate a **collapsible profile header** with a **sticky tab bar**, where **list scroll position stays coherent across tabs** (the usual “banking / wallet” pattern: large header shrinks as you scroll, tabs pin under the status area, switching tabs preserves scroll).
+A **React Native** sample app that demonstrates a **collapsible profile header** with a **sticky tab bar**, where **list scroll position stays coherent across tabs** (the usual “banking / wallet” pattern: large header shrinks as you scroll, tabs pin under the status area, switching tabs preserves scroll).
+
+## Branches
+
+| Branch | Scroll behaviour |
+| :--- | :--- |
+| **`basic`** | **Not** implemented — normal header, tabs, and `FlatList` layout only. |
+| **`main`** | **Implemented** — collapsible header, sticky tab bar, Reanimated scroll-driven header, and cross-tab scroll sync (`useScrollSync`). |
+
+Check out `basic` to compare the starting point; use **`main`** for the full demo.
 
 ## Preview
-Before:
-
-<img src="assets/basic.gif" alt="App before scrolling" width="218" height="500" />
+| Before | After |
+| :--- | :---: |
+| <img src="assets/basic.gif" alt="App before scrolling" width="218" height="500" /> | <img src="assets/main.gif" alt="App after scrolling implemented" width="218" height="500" /> |
 
 ## Requirements
 
@@ -52,7 +61,7 @@ npm run ios
 - React **19**
 - TypeScript
 - [react-native-safe-area-context](https://github.com/th3rdwave/react-native-safe-area-context)
-- [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/) + [react-native-worklets](https://github.com/software-mansion/react-native-worklets) (Babel plugin in `babel.config.js`) — reserved for upcoming scroll-linked UI
+- [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/) + [react-native-worklets](https://github.com/software-mansion/react-native-worklets) (Babel plugin in `babel.config.js`) — on **`main`**, used for scroll-linked header collapse; on **`basic`**, present in the stack but not wired for this pattern
 
 ## Troubleshooting
 
