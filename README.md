@@ -4,8 +4,8 @@ A **React Native** sample app that will demonstrate a **collapsible profile head
 
 ## Preview
 
-Before scrolling — initial screen (header expanded, tab bar below): 
-<img src="assets/basic.gif" alt="App before scrolling" width="360" height="826" />
+Before:
+<img src="assets/basic.gif" alt="App before scrolling" width="218" height="500" />
 
 ## Requirements
 
