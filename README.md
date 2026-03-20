@@ -3,8 +3,8 @@
 A **React Native** sample app that will demonstrate a **collapsible profile header** with a **sticky tab bar**, where **list scroll position stays coherent across tabs** (the usual “banking / wallet” pattern: large header shrinks as you scroll, tabs pin under the status area, switching tabs preserves scroll).
 
 ## Preview
-
 Before:
+
 <img src="assets/basic.gif" alt="App before scrolling" width="218" height="500" />
 
 ## Requirements
